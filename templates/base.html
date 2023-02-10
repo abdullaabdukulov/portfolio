@@ -1,10 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="zxx">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+  <!-- ** Basic Page Needs ** -->
+  <meta charset="utf-8">
+  <title>Abdulla Abdukulov</title>
+
+  <!-- ** Mobile Specific Metas ** -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Portfolio">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="abdukulov">
+  <meta name="generator" content="Abdulla">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="phantom" />
+
+  <!-- Essential Stylesheets -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themefisher-fonts/css/themefisher-fonts.min.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Theme Stylesheet -->
+  <link rel="stylesheet" href="#" id="color-changer">
+
+  <!--Favicon-->
+  <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
 </head>
 <body>
-$END$
+
+  <div class="preloader">
+    <div class="loading-mask"></div>
+    <div class="loading-mask"></div>
+    <div class="loading-mask"></div>
+    <div class="loading-mask"></div>
+    <div class="loading-mask"></div>
+  </div>
+
+  <div class="preview-wrapper">
+    <div class="switcher-head">
+      <span>Style Switcher</span>
+      <div class="switcher-trigger tf-tools"></div>
+    </div>
+
+    <div class="switcher-body">
+      <h4>Choose Color:</h4>
+      <ul class="color-options list-none">
+        <li class="c0" data-color="red" title="Default">Default</li>
+        <li class="c1" data-color="blue" title="Red">Red</li>
+        <li class="c2" data-color="green" title="Green">Green</li>
+        <li class="c3" data-color="yellow" title="Blue">Blue</li>
+      </ul>
+    </div>
+  </div>
+
+{% block content %}
+
+{% endblock content %}
+
+
+
+<script src="{% static 'plugins/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'plugins/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+
+<script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>
