@@ -14,6 +14,7 @@ class RepoType(models.Model):
 
 class Repo(models.Model):
     repo_type = models.ForeignKey(RepoType, related_name='types', on_delete=models.CASCADE)
+    repo_url = models.URLField()
     name = models.CharField(max_length=300)
     image = models.ImageField(upload_to='repos')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -21,5 +22,10 @@ class Repo(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Skill(models.Model):
+    name = models.CharField(max_length=250)
+    slug = models.SlugField()
 
 
