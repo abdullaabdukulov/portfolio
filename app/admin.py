@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Repo, RepoType
+from .models import Repo, RepoType, Skill
 
 
 @admin.register(RepoType)
@@ -12,3 +12,8 @@ class RepoAdmin(admin.ModelAdmin):
     list_display = ['repo_type', 'image', 'name', 'created_at', 'updated_at']
     list_filter = ['repo_type', 'created_at']
 
+
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug']
+    prepopulated_fields = ({'slug': ('name',)})

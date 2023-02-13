@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Skill
 
 
 def home(request):
@@ -10,7 +11,8 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    skills = Skill.objects.all()
+    return render(request, 'about.html', {'skills': skills})
 
 
 def resume(request):
