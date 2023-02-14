@@ -7,7 +7,7 @@
   <div class="pt-table">
     <div class="pt-tablecell page-resume relative">
       <!-- .close -->
-      <a href="'{% url 'app:home' %}" class="page-close"><i class="tf-ion-close"></i></a>
+      <a href="{% url 'app:home' %}" class="page-close"><i class="tf-ion-close"></i></a>
       <!-- /.close -->
 
       <div class="container">
@@ -15,8 +15,7 @@
           <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             <div class="page-title text-center">
               <h2>My <span class="primary">history</span> <span class="title-bg">Resume</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore magna aliquam erat volutpat.</p>
+              <p></p>
             </div>
           </div>
         </div> <!-- /.row -->
@@ -56,61 +55,19 @@
               </div>
               <!-- /.section-title -->
               <div class="history-scroller">
+                  {% for experience in experiences %}
                 <div class="history-item">
                   <div class="history-icon">
                     <span class="history-hex"></span>
                     <i class="tf-documents5"></i>
                   </div>
                   <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
+                      <a href="{{ experience.url }}"><h5>{{ experience.name }}</h5></a>
+                    <span>{{ experience.date }}</span>
+                      <p>{{ experience.desc }}</p>
                   </div>
                 </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                    <p>Claritas est etiam processus dynamicus, qui <br> sequitur mutationem consuetudium lectorum.</p>
-                  </div>
-                </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                  </div>
-                </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                  </div>
-                </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                  </div>
-                </div>
+                   {% endfor %}
                 <!-- /.history-item -->
               </div>
             </div> <!-- /.history-block -->
