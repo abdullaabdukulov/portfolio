@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skill
+from .models import Skill, Experience, Education
 
 
 def home(request):
@@ -16,7 +16,12 @@ def about(request):
 
 
 def resume(request):
-    return render(request, 'resume.html')
+    experiences = Experience.objects.all().order_by('-created_at')
+    educations = Education.objects.all().order_by('-created_at')
+    ctx = {'experiences': experiences,
+           'educations': educations}
+
+    return render(request, 'resume.html', ctx)
 
 
 def services(request):

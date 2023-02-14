@@ -29,61 +29,22 @@
               </div>
               <!-- /.section-title -->
               <div class="history-scroller">
+                  {% for education in educations %}
+
+
+
                 <div class="history-item">
                   <div class="history-icon">
                     <span class="history-hex"></span>
                     <i class="tf-documents5"></i>
                   </div>
                   <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
+                      <a href="{{ education.url }}"><h5>{{ education.name }}</h5></a>
+                    <span>{{ education.date }}</span>
+                      <p>{{ education.desc }}</p>
                   </div>
                 </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                    <p>Claritas est etiam processus dynamicus, qui <br> sequitur mutationem consuetudium lectorum.</p>
-                  </div>
-                </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                  </div>
-                </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                  </div>
-                </div>
-                <!-- /.history-item -->
-                <div class="history-item">
-                  <div class="history-icon">
-                    <span class="history-hex"></span>
-                    <i class="tf-documents5"></i>
-                  </div>
-                  <div class="history-text">
-                    <h5>Merin Land College</h5>
-                    <span>2012 - 2014</span>
-                  </div>
-                </div>
+                {% endfor %}
                 <!-- /.history-item -->
               </div>
             </div> <!-- /.history-block -->
