@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skill, Experience, Education
+from .models import Skill, Experience, Education, RepoType, Repo
 
 
 def home(request):
@@ -37,4 +37,9 @@ def welcome(request):
 
 
 def works(request):
-    return render(request, 'works.html')
+    repo_types = RepoType.objects.all()
+    repos = Repo.objects.all()
+    ctx = {'repo_types': repo_types,
+           'repos': repos,
+           }
+    return render(request, 'works.html', ctx)
