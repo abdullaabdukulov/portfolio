@@ -45,6 +45,8 @@
               <div class="progress clear">
                 <div class="skill-name">{{ skill.name }}</div>
               </div> <!-- /.progress -->
+                    {% empty %}
+                        There are no similar skills yet.
                 {% endfor %}
               </div> <!-- /.progress -->
             </div> <!-- /.skill-wrapper -->

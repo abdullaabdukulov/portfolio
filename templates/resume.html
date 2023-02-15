@@ -43,6 +43,8 @@
                       <p>{{ education.desc }}</p>
                   </div>
                 </div>
+                                          {% empty %}
+                        There are no similar educations yet.
                 {% endfor %}
                 <!-- /.history-item -->
               </div>
@@ -67,6 +69,8 @@
                       <p>{{ experience.desc }}</p>
                   </div>
                 </div>
+                                          {% empty %}
+                        There are no similar experience yet.
                    {% endfor %}
                 <!-- /.history-item -->
               </div>
