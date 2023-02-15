@@ -4,7 +4,6 @@ from django.db import models
 class RepoType(models.Model):
     name = models.CharField(max_length=250)
 
-
     class Meta:
         verbose_name = 'Repo Type'
         verbose_name_plural = 'Repo Types'
@@ -54,6 +53,17 @@ class Experience(models.Model):
     url = models.URLField(help_text='address url', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=250)
+    image = models.ImageField(upload_to='teams')
+    portfolio_url = models.URLField(blank=True, null=True)
+    job = models.CharField(max_length=250)
+    desc = models.TextField()
 
     def __str__(self):
         return self.name

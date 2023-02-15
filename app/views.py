@@ -1,5 +1,6 @@
+from django.core.mail import send_mail
 from django.shortcuts import render
-from .models import Skill, Experience, Education, RepoType, Repo
+from .models import Skill, Experience, Education, RepoType, Repo, Team
 
 
 def home(request):
@@ -7,6 +8,16 @@ def home(request):
 
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        subject = request.POST.get('subject')
+        msg = request.POST.get('message')
+        email = request.POST.get('email')
+        message = f"Full name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {msg}"
+        send_mail(
+            name, message, email,
+            ['abduqulovabdulla3108@gmail.com']
+        )
     return render(request, 'contact.html')
 
 
@@ -28,8 +39,10 @@ def services(request):
     return render(request, 'services.html')
 
 
-def testimonials(request):
-    return render(request, 'testimonials.html')
+def teams(request):
+    teams = Team.objects.all()
+    ctx = {'teams': teams}
+    return render(request, 'team.html', ctx)
 
 
 def welcome(request):

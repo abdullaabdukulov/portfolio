@@ -7,7 +7,7 @@
   <div class="pt-table">
     <div class="pt-tablecell page-works relative">
       <!-- .close -->
-      <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+      <a href="{% url 'app:home' %}" class="page-close"><i class="tf-ion-close"></i></a>
       <!-- /.close -->
 
       <div class="container">
@@ -15,8 +15,7 @@
           <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             <div class="page-title text-center">
               <h2>My <span class="primary">works</span> <span class="title-bg">works</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore magna aliquam erat volutpat.</p>
+              <p></p>
             </div>
           </div>
         </div> <!-- /.row -->
@@ -53,7 +52,7 @@
     <div class="flex flex-middle space-between">
       <span class="prev-page"><a href="{% url 'app:resume' %}" class="link">&larr; Prev Page</a></span>
       <span class="copyright">Copyright &copy; 2023, Designed &amp; Developed by <a href="https://t.me/abdukulov">@abdukulov</a>.</span>
-      <span class="next-page"><a href="{% url 'app:testimonials' %}" class="link">Next Page &rarr;</a></span>
+      <span class="next-page"><a href="{% url 'app:team' %}" class="link">Next Page &rarr;</a></span>
     </div>
   </div>
   <!-- /.page-nav -->

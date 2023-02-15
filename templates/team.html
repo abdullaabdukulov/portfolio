@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<main class="site-wrapper">
+  <div class="pt-table">
+    <div class="pt-tablecell page-quotes relative">
+      <!-- .close -->
+      <a href="{% url 'app:home' %}" class="page-close"><i class="tf-ion-close"></i></a>
+      <!-- /.close -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+            <div class="page-title text-center">
+              <h2>My <span class="primary">Team</span><span class="title-bg">Team</span></h2>
+              <p></p>
+            </div>
+          </div>
+        </div> <!-- /.row -->
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="testimonials">
+            {% for team in teams %}
+                <a href="{{ team.portfolio_url }}">
+              <div class="item">
+                <figure class="thumb">
+                  <div class="tm-hex" style="background-image: url('{{ team.image.url }}');">
+                    <div class="hexTop"></div>
+                    <div class="hexBottom"></div>
+                  </div>
+                  <figcaption>
+                    <h4>{{ team.name }}</h4>
+                    <span>{{ team.job }}</span>
+                  </figcaption>
+                </figure>
+                <div class="text">
+                  <p>{{ team.desc }}</p>
+                </div>
+              </div></a>
+            {% endfor %}
+            </div>
+          </div>
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+
+      <nav class="page-nav clear">
+  <div class="container">
+    <div class="flex flex-middle space-between">
+      <span class="prev-page"><a href="{% url 'app:works' %}" class="link">&larr; Prev Page</a></span>
+      <span class="copyright">Copyright &copy; 2023, Designed &amp; Developed by <a href="https://t.me/abdukulov">@abdukulov</a>.</span>
+      <span class="next-page"><a href="{% url 'app:contact' %}" class="link">Next Page &rarr;</a></span>
+    </div>
+  </div>
+  <!-- /.page-nav -->
+</nav>
+      <!-- /.container -->
+
+    </div> <!-- /.pt-tablecell -->
+  </div> <!-- /.pt-table -->
+</main> <!-- /.site-wrapper -->
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Repo, RepoType, Skill, Education, Experience
+from .models import Repo, RepoType, Skill, Education, Experience, Team
 
 
 @admin.register(RepoType)
@@ -27,3 +27,8 @@ class EducationAdmin(admin.ModelAdmin):
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
     list_display = ['name', 'desc', 'date', 'url', 'created_at', 'updated_at']
+
+
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ['name', 'image', 'portfolio_url', 'job', 'desc']
