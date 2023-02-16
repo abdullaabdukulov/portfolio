@@ -1431,3 +1431,11 @@ label {
   border-color: #1e2530;
 }
 /*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map */
+@media (max-width: 700px){
+  .homeimg {
+    width: 50%;
+  }
+
+}
